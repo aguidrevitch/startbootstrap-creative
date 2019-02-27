@@ -71,3 +71,7 @@ Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https:/
 
 docker run --rm -it -v "$PWD:/project:delegated" -e "AWS_ACCESS_KEY_ID=" -e "AWS_SECRET_ACCESS_KEY=" -e "AWS_DEFAULT_REGION=" mesosphere/aws-cli
 
+## Publishing
+
+docker run --rm -it -v "$PWD:/project:delegated" -e "AWS_ACCESS_KEY_ID=" -e "AWS_SECRET_ACCESS_KEY=" -e "AWS_DEFAULT_REGION=" mesosphere/aws-cli s3 sync . s3://BUCKET/ --exclude .git\* --exclude node_modules/\* --acl public-read
+
