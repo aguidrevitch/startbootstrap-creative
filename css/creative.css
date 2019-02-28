@@ -10596,10 +10596,6 @@ html {
   height: 100%;
 }
 
-.loading h1, .loading p, .loading input, .loading button {
-  font-family: Helvetica;
-}
-
 #page-top {
   display: block;
 }
@@ -10633,7 +10629,7 @@ hr.light {
 }
 
 header.masthead {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 10rem;
   padding-bottom: calc(10rem - 72px);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8)));
