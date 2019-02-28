@@ -1,5 +1,6 @@
 // Styling for the masthead
 header.masthead {
+  height: 100vh;
   padding-top: 10rem;
   padding-bottom: calc(10rem - #{$navbar-height});
   // replace the masthead.jpg image in the /img directory to change the image
@@ -12,6 +13,9 @@ header.masthead {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  .form-container {
+      min-height: 188px;
+  }
   h1 {
     font-size: 2.25rem;
   }
@@ -62,6 +66,9 @@ header.masthead {
     min-height: 40rem;
     padding-top: $navbar-height;
     padding-bottom: 0;
+    .form-container {
+      min-height: 140px;
+    }
     p {
       font-size: 1.15rem;
     }

@@ -12,7 +12,7 @@
                 : 'formSubmitError'
         });
         
-        form.classList.add('fade-out');
+        form.style.display = 'none';
         document.querySelector('#thank-you').style.display = 'block';
         document.querySelector('#thank-you').classList.add('fade-in');
     };

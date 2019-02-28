@@ -10633,6 +10633,7 @@ hr.light {
 }
 
 header.masthead {
+  height: 100vh;
   padding-top: 10rem;
   padding-bottom: calc(10rem - 72px);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8)));
@@ -10646,6 +10647,10 @@ header.masthead {
 .loaded header.masthead {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("../img/james-owen-1146577-unsplash.jpg");
   background-image: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../img/james-owen-1146577-unsplash.jpg");
+}
+
+header.masthead .form-container {
+  min-height: 188px;
 }
 
 header.masthead h1 {
@@ -10716,6 +10721,9 @@ header.masthead .list-inline-item a {
     min-height: 40rem;
     padding-top: 72px;
     padding-bottom: 0;
+  }
+  header.masthead .form-container {
+    min-height: 140px;
   }
   header.masthead p {
     font-size: 1.15rem;
