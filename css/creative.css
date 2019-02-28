@@ -10554,6 +10554,42 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 body,
 html {
   width: 100%;
@@ -10578,13 +10614,10 @@ hr.light {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.btn-xl {
-  padding: 1.25rem 2.25rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 10rem;
+.form-control-inline {
+  display: unset;
+  width: unset;
+  vertical-align: middle;
 }
 
 .page-section {
@@ -10594,8 +10627,8 @@ hr.light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 72px);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("../img/conor-luddy-316595-unsplash.jpg");
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../img/conor-luddy-316595-unsplash.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("../img/james-owen-1146577-unsplash.jpg");
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../img/james-owen-1146577-unsplash.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10604,6 +10637,46 @@ header.masthead {
 
 header.masthead h1 {
   font-size: 2.25rem;
+}
+
+header.masthead form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+header.masthead #thank-you {
+  position: absolute;
+  left: 50%;
+  margin-left: -104px;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+header.masthead #thank-you.fade-in {
+  opacity: 1;
+  -webkit-animation: fade-in .5s ease-out;
+  animation: fade-in .5s ease-out;
+}
+
+header.masthead .fade-out {
+  opacity: 0;
+  -webkit-animation: fade-out .5s ease-out;
+  animation: fade-out .5s ease-out;
+}
+
+header.masthead .btn-subscribe {
+  margin-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  text-transform: uppercase;
 }
 
 @media (min-width: 992px) {
@@ -10618,6 +10691,22 @@ header.masthead h1 {
   }
   header.masthead h1 {
     font-size: 3rem;
+  }
+  header.masthead form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  header.masthead #thank-you {
+    margin-left: -120px;
+  }
+  header.masthead .btn-subscribe {
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+  header.masthead [name=EMAIL] {
+    width: 245px;
   }
 }
 

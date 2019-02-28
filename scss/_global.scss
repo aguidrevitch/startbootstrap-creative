@@ -26,13 +26,10 @@ hr.light {
   font-family: $font-family-sans-serif;
 }
 
-.btn-xl {
-  padding: 1.25rem 2.25rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 10rem;
+.form-control-inline {
+    display: unset;
+    width: unset;
+    vertical-align: middle;
 }
 
 // Page section padding

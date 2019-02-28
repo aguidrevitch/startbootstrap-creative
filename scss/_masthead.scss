@@ -4,13 +4,39 @@ header.masthead {
   padding-bottom: calc(10rem - #{$navbar-height});
   // replace the masthead.jpg image in the /img directory to change the image
   // if the image name change, make sure to update the url path below!
-  background: linear-gradient(to bottom, #{fade-out($brown, .2)} 0%,#{fade-out($brown, .2)} 100%), url('../img/conor-luddy-316595-unsplash.jpg');
+  background: linear-gradient(to bottom, #{fade-out($brown, .2)} 0%,#{fade-out($brown, .2)} 100%), url('../img/james-owen-1146577-unsplash.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
   h1 {
     font-size: 2.25rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #thank-you {
+    position: absolute;
+    left: 50%;
+    margin-left: -104px;
+    text-transform: uppercase;
+    opacity: 0;
+  }
+  #thank-you.fade-in {
+    opacity: 1;
+    animation: fade-in .5s ease-out;
+  }
+  .fade-out {
+    opacity: 0;
+    animation: fade-out .5s ease-out;
+  }
+  .btn-subscribe {
+    margin-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-transform: uppercase;
   }
   @include media-breakpoint-up(lg) {
     height: 100vh;
@@ -22,6 +48,19 @@ header.masthead {
     }
     h1 {
       font-size: 3rem;
+    }
+    form {
+        flex-direction: row;
+    }
+    #thank-you {
+        margin-left: -120px;
+    }
+    .btn-subscribe {
+        margin-left: 1rem;  
+        margin-top: 0;
+    }
+    [name=EMAIL] {
+      width: 245px;
     }
   }
   @include media-breakpoint-up(xl) {

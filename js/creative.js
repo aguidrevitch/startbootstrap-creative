@@ -1,58 +1,32 @@
-(function($) {
-  "use strict"; // Start of use strict
+(function (window) {
+    "use strict"; // Start of use strict
 
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 72)
-        }, 1000, "easeInOutExpo");
-        return false;
-      }
-    }
-  });
+    var form = document.querySelector("form");
+  
+    window.subscribed = function (result) {
+        form.classList.add('fade-out');
+        document.querySelector("#thank-you").classList.add('fade-in');
+    };
 
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
-  });
+    var formSubmit = function (e) {
+        e.preventDefault();
 
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#mainNav',
-    offset: 75
-  });
+        var action = form.getAttribute("action").replace('/post?', '/post-json?');
+        var data = new URLSearchParams();
+        (new FormData(form)).forEach(function (value, field) {
+            data.append(field, value);
+        });
+        data.append("c", "subscribed");
 
-  // Collapse Navbar
-  var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-scrolled");
-    } else {
-      $("#mainNav").removeClass("navbar-scrolled");
-    }
-  };
-  // Collapse now if page is not at top
-  navbarCollapse();
-  // Collapse the navbar when page is scrolled
-  $(window).scroll(navbarCollapse);
+        var head= document.getElementsByTagName('head')[0];
+        var script= document.createElement('script');
+        script.type= 'text/javascript';
+        script.src= action + '&' + data;
+        head.appendChild(script);
 
-  // Magnific popup calls
-  $('#portfolio').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    tLoading: 'Loading image #%curr%...',
-    mainClass: 'mfp-img-mobile',
-    gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0, 1]
-    },
-    image: {
-      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-    }
-  });
+        form.removeEventListener("submit", formSubmit);
+    };
 
-})(jQuery); // End of use strict
+    form.addEventListener("submit", formSubmit);
+
+})(window); // End of use strict
