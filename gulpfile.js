@@ -67,7 +67,11 @@ function modules() {
       '!./node_modules/jquery/dist/core.js'
     ])
     .pipe(gulp.dest('./vendor/jquery'));
-  return merge(bootstrap, fontAwesome, jquery, jqueryEasing, magnificPopup);
+  // Domready JS
+  var domready = gulp.src('./node_modules/domready/*.js')
+    .pipe(gulp.dest('./vendor/domready'));
+
+  return merge(bootstrap, fontAwesome, jquery, jqueryEasing, magnificPopup, domready);
 }
 
 // CSS task

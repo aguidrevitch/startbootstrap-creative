@@ -5,6 +5,15 @@ html {
   height: 100%;
 }
 
+.loading {
+    h1, p, input, button {
+        font-family: Helvetica;
+    }
+}
+
+#page-top {
+  display: block;
+}
 // Typography
 .text-white-75 {
   color: fade-out($white, .25);

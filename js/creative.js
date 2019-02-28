@@ -1,4 +1,4 @@
-(function (window) {
+(function (window, document) {
     'use strict'; // Start of use strict
 
     var form = document.querySelector('form');
@@ -38,4 +38,4 @@
 
     form.addEventListener('submit', formSubmit);
 
-})(window); // End of use strict
+})(window, document); // End of use strict

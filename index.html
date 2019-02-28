@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="loading">
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="The Spinner, version 2.0. A push and squeeze spinner">
   <meta name="author" content="">
+  <meta name="theme-color" content="#5c4d42">
+  <meta property="og:image" content="/img/james-owen-1146577-unsplash.jpg">
+  <meta property="twitter:image:src" content="/img/james-owen-1146577-unsplash.jpg">
 
   <title>Squeezoid - A whole new breed of spinner fidget</title>
 
-  <!-- Font Awesome Icons -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
 
-  <!-- Google Fonts -->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type='text/css'>
+
+  <!--
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type='text/css'>
+   -->
 
   <!-- Theme CSS - Includes Bootstrap -->
-  <link href="css/creative.min.css" rel="stylesheet" type='text/css'>
-  <meta property="og:image" content="/img/james-owen-1146577-unsplash.jpg">
-  <meta property="twitter:image:src" content="/img/james-owen-1146577-unsplash.jpg">
+  <link href="/css/creative.min.css" rel="stylesheet" type='text/css'>
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -48,35 +51,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">1000+ hours of engineering. Be one of the first to get it</p>
+          <p class="text-white-75 font-weight-light mb-5">1000+ hours of engineering.<br>Be one of the first to get it</p>
           <p id="thank-you" class="text-white-75 font-weight-light" style="display: none">Thank you for joining!</p>
 
           <!-- <div id="mc_embed_signup"> -->
-          <form action="https://squeezoid.us20.list-manage.com/subscribe/post?u=67b15e4e07693f3995da41656&amp;id=9f2290f996" method="post">
+          <form action="https://squeezoid.us20.list-manage.com/subscribe/post?u=67b15e4e07693f3995da41656&id=9f2290f996" method="post" novalidate="novalidate">
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_67b15e4e07693f3995da41656_9f2290f996" tabindex="-1" value=""></div>
-            <input name="EMAIL" type="email" class="form-control form-control-inline" placeholder="Enter your email ...">
+            <label id="emailLabel" style="position: absolute; left: -5000px;" aria-hidden="true">Enter your email ...</label>
+            <input name="EMAIL" type="email" class="form-control form-control-inline" placeholder="Enter your email ..." aria-labelledby="emailLabel">
             <button class="btn btn-primary btn-subscribe">Join waiting list</button>
           </form>
         </div>
         <div class="social col-lg-8 align-self-baseline">
             <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                    <a href="https://fb.me/SqueezoidFidget">
+                    <a href="https://fb.me/SqueezoidFidget" title="Our Facebook page">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="https://www.youtube.com/channel/UCeQWLjQDasPyfhhMHGGGtwA">
+                    <a href="https://www.youtube.com/channel/UCeQWLjQDasPyfhhMHGGGtwA" title="Our Youtube channel">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="https://instagram.com/squeezoidfidget">
+                    <a href="https://instagram.com/squeezoidfidget" title="Our Instagram page">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="https://twitter.com/squeezoidfidget">
+                    <a href="https://twitter.com/squeezoidfidget" title="Our Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </li>
@@ -88,6 +92,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     </div>
   </header>
+
+  <script src="vendor/domready/ready.min.js"></script>
+
+  <script>
+    domready(function () {
+        document.documentElement.className = 'loaded';
+    }); 
+  </script>
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
