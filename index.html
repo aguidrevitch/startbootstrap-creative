@@ -1,104 +1,98 @@
 <!DOCTYPE html>
 <html lang="en" class="loading">
 
-<head>
+    <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Spinner, version 2.0">
-  <meta name="author" content="">
-  <meta name="theme-color" content="#5c4d42">
-  <meta property="og:image" content="/img/james-owen-1146577-unsplash.jpg">
-  <meta property="twitter:image:src" content="/img/james-owen-1146577-unsplash.jpg">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Spinner, version 2.0">
+        <meta name="author" content="">
+        <meta name="theme-color" content="#5c4d42">
+        <meta property="og:image" content="/img/james-owen-1146577-unsplash.jpg">
+        <meta property="twitter:image:src" content="/img/james-owen-1146577-unsplash.jpg">
 
-  <title>Squeezoid - A whole new breed of fidget spinner</title>
+        <title>Squeezoid - A whole new breed of fidget spinner</title>
 
-  <link rel="preconnect" href="https://stats.g.doubleclick.net/">
-  <link rel="preconnect" href="https://www.google-analytics.com/">
+        <link rel="preconnect" href="https://stats.g.doubleclick.net/">
+        <link rel="preconnect" href="https://www.google-analytics.com/">
 
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="/css/creative.min.css" rel="stylesheet" type='text/css'>
+        <!-- Theme CSS - Includes Bootstrap -->
+        <link href="/css/new.min.css" rel="stylesheet" type='text/css'>
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MJ6S47Q');</script>
-  <!-- End Google Tag Manager -->
+        <!-- Google Tag Manager -->
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-MJ6S47Q');</script>
+        <!-- End Google Tag Manager -->
 
-</head>
+    </head>
 
-<body id="page-top">
+    <body>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ6S47Q"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ6S47Q" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Masthead -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Squeezoid</h1>
-          <h3 class="text-uppercase text-white font-weight-light">A whole new breed of fidget spinner</h3>
-          <hr class="divider my-4">
+        <div class="video-container">
+            <video autoplay loop muted id="initial">
+                <source src="/video/squeezoid-loop.mp4" type="video/mp4">
+                <source src="/video/squeezoid-loop.webm" type="video/webm">
+            </video>
+
+            <div class="overlay">
+                <h1 data-start="0" data-stop="10000">They've been changing forms, colors and sizes...</h1>
+                <h1 data-start="11000">We changed how you spin it</h1>
+                <p><span data-start="13000">Squeezoid.</span> <span data-start="15000">Coming soon to Kickstarter.</span></p>
+
+                <p id="thank-you">Thank you for joining!</p>
+
+                <form data-xstart="11000" action="https://squeezoid.us20.list-manage.com/subscribe/post?u=67b15e4e07693f3995da41656&id=9f2290f996" method="post" novalidate="novalidate">
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_67b15e4e07693f3995da41656_9f2290f996" tabindex="-1" value=""></div>
+                    <label id="emailLabel" style="position: absolute; left: -5000px;" aria-hidden="true">Enter your email ...</label>
+                    <input name="EMAIL" type="email" class="form-control form-control-inline" placeholder="Enter your email ..." aria-labelledby="emailLabel">
+                    <button class="btn btn-primary btn-subscribe">Join waiting list</button>
+                </form>
+
+                <div class="social col-lg-8 align-self-baseline">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="https://fb.me/SqueezoidFidget" title="Our Facebook page">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/channel/UCeQWLjQDasPyfhhMHGGGtwA" title="Our Youtube channel">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://instagram.com/squeezoidfidget" title="Our Instagram page">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/squeezoidfidget" title="Our Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
         </div>
-        <div class="form-container col-lg-8 align-self-baseline form-container">
-          <p class="text-white-75 font-weight-light mb-5">1000+ hours of engineering.<br>Coming soon... Be one of the first to get it.</p>
-          <p id="thank-you" class="text-white-75 font-weight-light" style="display: none">Thank you for joining!</p>
 
-          <!-- <div id="mc_embed_signup"> -->
-          <form action="https://squeezoid.us20.list-manage.com/subscribe/post?u=67b15e4e07693f3995da41656&id=9f2290f996" method="post" novalidate="novalidate">
-            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_67b15e4e07693f3995da41656_9f2290f996" tabindex="-1" value=""></div>
-            <label id="emailLabel" style="position: absolute; left: -5000px;" aria-hidden="true">Enter your email ...</label>
-            <input name="EMAIL" type="email" class="form-control form-control-inline" placeholder="Enter your email ..." aria-labelledby="emailLabel">
-            <button class="btn btn-primary btn-subscribe">Join waiting list</button>
-          </form>
-        </div>
-        <div class="social col-lg-8 align-self-baseline">
-            <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                    <a href="https://fb.me/SqueezoidFidget" title="Our Facebook page">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://www.youtube.com/channel/UCeQWLjQDasPyfhhMHGGGtwA" title="Our Youtube channel">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://instagram.com/squeezoidfidget" title="Our Instagram page">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://twitter.com/squeezoidfidget" title="Our Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-      </div>
+        <!-- Custom scripts for this template -->
+        <script src="/js/index.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type='text/css'>
 
-
-
-    </div>
-  </header>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        document.documentElement.className = 'loaded';
-    }); 
-  </script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
-
-  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type='text/css'>
-
-</body>
+    </body>
 
 </html>

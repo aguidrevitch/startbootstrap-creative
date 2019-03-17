@@ -37,7 +37,7 @@ After installation, run `docker run --rm -it -w /build -v "$PWD:/build:delegated
 #### Gulp Tasks
 
 - `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn gulp` the default task that builds everything
-- `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
+- `docker run --rm -it -w /build -v "$PWD:/build:delegated" -p 3000:3000 node:latest yarn gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
 - `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn gulp css` compiles SCSS files into CSS and minifies the compiled CSS
 - `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn gulp js` minifies the themes JS file
 - `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn gulp vendor` copies dependencies from node_modules to the vendor directory

@@ -1,0 +1,169 @@
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap.scss";
+
+// Import custom styles
+@import "./animations.scss";
+
+.video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+
+  video {
+    /* Make video to at least 100% wide and tall */
+    min-width: 100%; 
+    min-height: 100%; 
+    
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    width: auto;
+    height: auto;
+    
+    /* Center the video */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+}
+
+
+////////////////////////////////////////
+
+body { 
+  background: #000;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+}
+  
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  margin: auto auto 1em;
+  box-sizing: border-box;
+  padding: 2em;
+  line-height: 1.5;
+  text-align: center;
+  
+  h1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+  }    
+
+  h1 {
+    font-size: 3.5em;
+    font-weight: normal;
+    text-shadow: 0 0 .3em #000;
+    margin: 1.8em 0 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 2.8em;
+    text-shadow: 0 0 .3em #000;
+    margin: 4em 0 0;
+    text-transform: uppercase;
+  }
+  a {
+    color: #fff;
+  }
+
+  
+  form {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    margin-bottom: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #thank-you {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    margin: 0 0 100px 0;
+  }
+
+  .social {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1em;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+  }
+  .list-inline-item a {
+    font-size: 20px;
+    line-height: 50px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    color: #fff;
+    border-radius: 100%;
+    outline: 0;
+    background-color: #212529;
+  }
+
+}
+
+[data-start] {
+  opacity: 0;
+}
+.fade-in {
+  opacity: 1;
+  animation: fade-in .5s ease-out;
+}
+.fade-out {
+  opacity: 0;
+  animation: fade-out .5s ease-out;
+}
+
+@include media-breakpoint-up(lg) {
+
+    .overlay {
+        form {
+            flex-direction: row;
+
+            .btn-subscribe {
+                margin-left: 1rem;  
+                margin-top: 0;
+            }
+            [name=EMAIL], button {
+                width: 245px;
+            }
+
+        }
+    /*
+    input, button {
+        margin: 0 auto;
+    }
+    input, .btn-subscribe {
+        margin-top: 1rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        text-transform: uppercase;
+    }
+    */
+
+    }
+}
