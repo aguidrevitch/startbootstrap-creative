@@ -10608,7 +10608,7 @@ a.text-dark:hover, a.text-dark:focus {
   /* Center the video */
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -10644,15 +10644,16 @@ body {
 }
 
 .overlay h1 {
-  font-size: 3.5em;
+  margin: 0;
+  font-size: 3em;
   font-weight: normal;
   text-shadow: 0 0 .3em #000;
-  margin: 1.8em 0 0;
   text-transform: uppercase;
+  margin: 0.8em 0 0;
 }
 
 .overlay p {
-  font-size: 2.8em;
+  font-size: 2em;
   text-shadow: 0 0 .3em #000;
   margin: 4em 0 0;
   text-transform: uppercase;
@@ -10669,7 +10670,7 @@ body {
   -webkit-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10680,6 +10681,15 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.overlay form .form-control {
+  width: unset;
+}
+
+.overlay form input, .overlay form .btn-subscribe {
+  margin: 1rem 2em 0 2em;
+  text-transform: uppercase;
 }
 
 .overlay #thank-you {
@@ -10733,19 +10743,12 @@ body {
   animation: fade-out .5s ease-out;
 }
 
-@media (min-width: 992px) {
-  .overlay {
-    /*
-    input, button {
-        margin: 0 auto;
-    }
-    input, .btn-subscribe {
-        margin-top: 1rem;
-        padding-left: 3rem;
-        padding-right: 3rem;
-        text-transform: uppercase;
-    }
-    */
+@media (min-width: 576px) {
+  .video-container video {
+    left: 50%;
+  }
+  .overlay p {
+    margin: 1.8em 0 0;
   }
   .overlay form {
     -webkit-box-orient: horizontal;
@@ -10753,11 +10756,24 @@ body {
     -ms-flex-direction: row;
     flex-direction: row;
   }
-  .overlay form .btn-subscribe {
-    margin-left: 1rem;
-    margin-top: 0;
+  .overlay form input {
+    margin: 0;
   }
-  .overlay form [name=EMAIL], .overlay form button {
+  .overlay form .btn-subscribe {
+    margin: 0 0 0 1em;
+  }
+  .overlay form input, .overlay form .btn-subscribe {
     width: 245px;
+  }
+}
+
+@media (min-width: 992px) {
+  .overlay h1 {
+    font-size: 3.5em;
+    margin: 1.8em 0 0;
+  }
+  .overlay p {
+    font-size: 2.8em;
+    margin: 4em 0 0;
   }
 }

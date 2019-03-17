@@ -40,14 +40,14 @@
         document.querySelectorAll('[data-start]').forEach(function (el) {
             var start = parseInt(el.dataset.start);
             setTimeout(function () {
-                console.log("start", start);
+                //console.log("start", start);
                 el.classList.add('fade-in');
             }, start);
         });
         document.querySelectorAll('[data-stop]').forEach(function (el) {
             var stop = parseInt(el.dataset.stop);
             setTimeout(function () {
-                console.log("stop", stop);
+                //console.log("stop", stop);
                 el.classList.add('fade-out');
             }, stop);
         });
