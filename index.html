@@ -39,7 +39,11 @@
         <!-- End Google Tag Manager (noscript) -->
 
         <div class="video-container">
-            <video autoplay loop muted id="initial">
+            <video autoplay loop muted id="initial" data-start="0" data-stop="18000">
+                <source src="/video/squeezoid.mp4" type="video/mp4">
+                <source src="/video/squeezoid.webm" type="video/webm">
+            </video>
+            <video loop muted id="initial" data-start="18000">
                 <source src="/video/squeezoid-loop.mp4" type="video/mp4">
                 <source src="/video/squeezoid-loop.webm" type="video/webm">
             </video>

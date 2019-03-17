@@ -36,23 +36,33 @@
         form.removeEventListener('submit', formSubmit);
     };
 
-    document.addEventListener('DOMContentLoaded', function () {
+    //document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('[data-start]').forEach(function (el) {
             var start = parseInt(el.dataset.start);
             setTimeout(function () {
                 //console.log("start", start);
-                el.classList.add('fade-in');
+                if (el.nodeName == 'VIDEO') {
+                    el.classList.add('fade-in');
+                    el.play();
+                } else {
+                    el.classList.add('fade-in');
+                }
             }, start);
         });
         document.querySelectorAll('[data-stop]').forEach(function (el) {
             var stop = parseInt(el.dataset.stop);
             setTimeout(function () {
                 //console.log("stop", stop);
-                el.classList.add('fade-out');
+                if (el.nodeName == 'VIDEO') {
+                    el.parentNode.removeElement(el);
+                } else {
+                    el.classList.add('fade-out');
+                }
             }, stop);
         });
-    });
+    //});
 
     form.addEventListener('submit', formSubmit);
+    window.scrollTo(0,1);
 
 })(window, document); // End of use strict
