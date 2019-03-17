@@ -10683,7 +10683,7 @@ body {
   justify-content: center;
 }
 
-.overlay form .form-control {
+.overlay form input {
   width: unset;
 }
 
