@@ -50,11 +50,13 @@
             }, start);
         });
         document.querySelectorAll('[data-stop]').forEach(function (el) {
-            var stop = parseInt(el.dataset.stop);
+            var stop = parseInt(el.dataset.stop); 
             setTimeout(function () {
                 //console.log("stop", stop);
                 if (el.nodeName == 'VIDEO') {
-                    el.parentNode.removeElement(el);
+                    setTimeout(function () {
+                        el.parentNode.removeChild(el);
+                    }, 1000);
                 } else {
                     el.classList.add('fade-out');
                 }

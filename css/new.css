@@ -10611,6 +10611,11 @@ a.text-dark:hover, a.text-dark:focus {
   left: 60%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  display: none;
+}
+
+.loaded .video-container video {
+  display: block;
 }
 
 body {
