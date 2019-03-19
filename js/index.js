@@ -2,6 +2,14 @@
     'use strict'; // Start of use strict
 
     var form = document.querySelector('form');
+    if (URLSearchParams) {
+        (new URLSearchParams(window.location.search)).forEach(function (value, name) {
+            var input = form.querySelector('input[name=' + name + ']');
+            if (input) {
+                input.setAttribute('value', value);
+            }
+        });
+    }
   
     window.subscribed = function (result) {
         window.dataLayer = window.dataLayer || [];
