@@ -2,11 +2,20 @@
     'use strict'; // Start of use strict
 
     var form = document.querySelector('form');
+    var mcMap = {
+        'utm_campaign': 'MMERGE6',
+        'utm_source': 'MMERGE7',
+        'utm_medium': 'MMERGE8',
+    };
     if (URLSearchParams) {
+
         (new URLSearchParams(window.location.search)).forEach(function (value, name) {
-            var input = form.querySelector('input[name=' + name + ']');
-            if (input) {
+            if (mcMap[name]) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'hidden');
+                input.setAttribute('name', mcMap[name]);
                 input.setAttribute('value', value);
+                form.appendChild(input);                
             }
         });
     }
