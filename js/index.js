@@ -6,6 +6,7 @@
         'utm_campaign': 'MMERGE6',
         'utm_source': 'MMERGE7',
         'utm_medium': 'MMERGE8',
+        'utm_content': 'MMERGE9',
     };
     if (URLSearchParams) {
 
