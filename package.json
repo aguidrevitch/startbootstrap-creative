@@ -3,6 +3,7 @@
     "name": "startbootstrap-creative",
     "version": "5.1.3",
     "scripts": {
+        "gulp": "gulp",
         "start": "gulp watch"
     },
     "description": "Creative is a stylish one page HTML theme for Bootstrap.",
@@ -33,8 +34,7 @@
         "bootstrap": "4.3.1",
         "domready": "^1.0.8",
         "jquery": "3.3.1",
-        "jquery.easing": "^1.4.1",
-        "magnific-popup": "^1.1.0"
+        "jquery.easing": "^1.4.1"
     },
     "devDependencies": {
         "browser-sync": "2.26.3",

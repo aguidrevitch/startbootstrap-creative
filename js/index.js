@@ -54,33 +54,31 @@
         form.removeEventListener('submit', formSubmit);
     };
 
-    //document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('[data-start]').forEach(function (el) {
-            var start = parseInt(el.dataset.start);
-            setTimeout(function () {
-                //console.log("start", start);
-                if (el.nodeName == 'VIDEO') {
-                    el.classList.add('fade-in');
-                    el.play();
-                } else {
-                    el.classList.add('fade-in');
-                }
-            }, start);
-        });
-        document.querySelectorAll('[data-stop]').forEach(function (el) {
-            var stop = parseInt(el.dataset.stop); 
-            setTimeout(function () {
-                //console.log("stop", stop);
-                if (el.nodeName == 'VIDEO') {
-                    setTimeout(function () {
-                        el.parentNode.removeChild(el);
-                    }, 1000);
-                } else {
-                    el.classList.add('fade-out');
-                }
-            }, stop);
-        });
-    //});
+    document.querySelectorAll('[data-start]').forEach(function (el) {
+        var start = parseInt(el.dataset.start);
+        setTimeout(function () {
+            //console.log("start", start);
+            if (el.nodeName == 'VIDEO') {
+                el.classList.add('fade-in');
+                el.play();
+            } else {
+                el.classList.add('fade-in');
+            }
+        }, start);
+    });
+    document.querySelectorAll('[data-stop]').forEach(function (el) {
+        var stop = parseInt(el.dataset.stop);
+        setTimeout(function () {
+            //console.log("stop", stop);
+            if (el.nodeName == 'VIDEO') {
+                setTimeout(function () {
+                    el.parentNode.removeChild(el);
+                }, 1000);
+            } else {
+                el.classList.add('fade-out');
+            }
+        }, stop);
+    });
 
     form.addEventListener('submit', formSubmit);
     window.scrollTo(0,1);

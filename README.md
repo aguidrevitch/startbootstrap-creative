@@ -32,15 +32,15 @@ After downloading, simply edit the HTML and CSS files included with the template
 
 ### Advanced Usage
 
-After installation, run `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn install` and then run `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn  start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+After installation, run `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:dubnium yarn install` and then run `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:dubnium yarn  start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
 
 #### Gulp Tasks
 
-- `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn gulp` the default task that builds everything
-- `docker run --rm -it -w /build -v "$PWD:/build:delegated" -p 3000:3000 node:latest yarn gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
-- `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn gulp css` compiles SCSS files into CSS and minifies the compiled CSS
-- `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn gulp js` minifies the themes JS file
-- `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:latest yarn gulp vendor` copies dependencies from node_modules to the vendor directory
+- `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:dubnium yarn gulp` the default task that builds everything
+- `docker run --rm -it -w /build -v "$PWD:/build:delegated" -p 3000:3000 node:dubnium yarn gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
+- `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:dubnium yarn gulp css` compiles SCSS files into CSS and minifies the compiled CSS
+- `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:dubnium yarn gulp js` minifies the themes JS file
+- `docker run --rm -it -w /build -v "$PWD:/build:delegated" node:dubnium yarn gulp vendor` copies dependencies from node_modules to the vendor directory
 
 You must have npm and Gulp installed globally on your machine in order to use these features.
 

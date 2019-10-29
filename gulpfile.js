@@ -49,30 +49,11 @@ function clean() {
 }
 
 // Bring third party dependencies from node_modules into vendor directory
-function modules() {
-  // Bootstrap JS
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/js/**/*')
-    .pipe(gulp.dest('./vendor/bootstrap/js'));
-  // Font Awesome
-  var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
-    .pipe(gulp.dest('./vendor'));
-  // jQuery Easing
-  var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
-    .pipe(gulp.dest('./vendor/jquery-easing'));
-  // Magnific Popup
-  var magnificPopup = gulp.src('./node_modules/magnific-popup/dist/*')
-    .pipe(gulp.dest('./vendor/magnific-popup'));
-  // jQuery
-  var jquery = gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
-    ])
-    .pipe(gulp.dest('./vendor/jquery'));
-  // Domready JS
-  var domready = gulp.src('./node_modules/domready/*.js')
-    .pipe(gulp.dest('./vendor/domready'));
+function vendor() {
+    var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
+        .pipe(gulp.dest('./vendor'));
 
-  return merge(bootstrap, fontAwesome, jquery, jqueryEasing, magnificPopup, domready);
+    return merge(fontAwesome);
 }
 
 // CSS task
@@ -127,15 +108,13 @@ function watchFiles() {
 }
 
 // Define complex tasks
-const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js));
+const build = gulp.series(clean, gulp.parallel(css, js, vendor));
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
 exports.css = css;
 exports.js = js;
 exports.clean = clean;
-exports.vendor = vendor;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
