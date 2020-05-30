@@ -16,7 +16,7 @@ jobs:
           name: Installing AWS CLI
           command: |
             sudo apt-get install python-pip
-            sudo pip install awscli
+            sudo pip install awscli -q
 
       - run:
           name: Installing Dependencies
