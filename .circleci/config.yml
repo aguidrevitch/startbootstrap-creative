@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Installation of additional packages
           command: |
-            pip install awscli
+            apt-get install awscli
 
       - run:
           name: Install Dependencies
