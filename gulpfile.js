@@ -79,11 +79,11 @@ function js() {
 }
 
 function inline() {
-    return gulp.src('./src/html/*.html')
+    return gulp.src('./src/html/**/*.html')
         .pipe(inlinesource({ compress: false }))
-        .pipe(rename(function (file) {
-            file.dirname = path.dirname(file.dirname);
-        }))
+        // .pipe(rename(function (file) {
+        //     file.dirname = path.dirname(file.dirname);
+        // }))
         .pipe(gzip())
         .pipe(gulp.dest('./'))
         .pipe(browsersync.stream());
