@@ -12,7 +12,7 @@ const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const inlinesource = require('gulp-inline-source');
-const gzip = process.args.includes('--prod')
+const gzip = process.argv.includes('--prod')
     ? require('gulp-gzip')
     : require("gulp-empty-pipe");
 
