@@ -38,6 +38,8 @@
         "gulp": "^4.0.2",
         "gulp-clean-css": "^4.3.0",
         "gulp-concat": "^2.6.1",
+        "gulp-empty-pipe": "^5.0.0",
+        "gulp-gzip": "^1.4.2",
         "gulp-inline-source": "^4.0.0",
         "gulp-plumber": "^1.2.1",
         "gulp-rename": "^1.4.0",

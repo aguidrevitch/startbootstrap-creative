@@ -1,0 +1,13 @@
+machine:
+  node:
+    version: 0.10.0
+dependencies:
+  post:
+    - npm install && gulp build -- --prod
+deployment:
+  production:
+    branch: master
+    commands:
+      - sudo pip install awscli
+      - aws s3 sync . s3://squeezoid.com --exclude "src" --cache-control public,max-age=30672000
+      - aws s3 sync . s3://squeezoid.com --exclude "*.js" --exclude "*.css"

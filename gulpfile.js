@@ -12,10 +12,10 @@ const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const inlinesource = require('gulp-inline-source');
-
-// Load package.json for banner
-const pkg = require('./package.json');
-
+console.log(process.argv, process.argv.includes('--prod'));
+const gzip = process.argv.includes('--prod')
+    ? require('gulp-gzip')
+    : require("gulp-empty-pipe");
 
 // BrowserSync
 function browserSync(done) {
@@ -38,14 +38,14 @@ function browserSyncReload(done) {
 
 // Clean vendor
 function clean() {
-    return del(["./*.html", "./css/*", "./js/*"]);
+    return del(["./*.html", "./*.html.gz", "./css/*", "./js/*"]);
 }
 
 // CSS task
 function css() {
     return gulp
-        .src([ 
-            "./src/scss/*.scss", 
+        .src([
+            "./src/scss/*.scss",
             "!./src/scss/_*.scss"
         ])
         .pipe(plumber())
@@ -80,10 +80,11 @@ function js() {
 
 function inline() {
     return gulp.src('./src/html/*.html')
-        .pipe(inlinesource({compress: false}))
+        .pipe(inlinesource({ compress: false }))
         .pipe(rename(function (file) {
             file.dirname = path.dirname(file.dirname);
         }))
+        .pipe(gzip())
         .pipe(gulp.dest('./'))
         .pipe(browsersync.stream());
 };
