@@ -29,5 +29,4 @@ jobs:
       - run:
           name: Deploy project
           command: |
-            
-            aws s3 sync . s3://squeezoid.com --exclude "src" --exclude "node_modules" --cache-control public,max-age=30672000
+            aws s3 sync . s3://squeezoid.com --exclude .git\* --exclude node_modules/\* --exclude ./src/\* --exclude ./css/\* --exclude ./js/\* --content-encoding gzip --cache-control public,max-age=30672000
