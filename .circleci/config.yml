@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Installation of additional packages
           command: |
-            apt-get install awscli
+            sudo apt-get install awscli
 
       - run:
           name: Install Dependencies
