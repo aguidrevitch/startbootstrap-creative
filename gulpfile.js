@@ -79,7 +79,7 @@ function js() {
 }
 
 function inline() {
-    return gulp.src('./src/html/**/*.html')
+    return gulp.src('./src/html/**/*.html', { base: './src/html/' })
         .pipe(inlinesource({ compress: false }))
         .pipe(rename(function (file) {
             console.log(file);
