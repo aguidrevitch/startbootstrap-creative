@@ -81,10 +81,6 @@ function js() {
 function inline() {
     return gulp.src('./src/html/**/*.html', { base: './src/html/' })
         .pipe(inlinesource({ compress: false }))
-        .pipe(rename(function (file) {
-            console.log(file);
-            // file.dirname = path.dirname(file.dirname);
-        }))
         .pipe(gzip())
         .pipe(gulp.dest('./'))
         .pipe(browsersync.stream());
