@@ -16,8 +16,6 @@ const gzip = process.argv.includes('--prod')
     ? require('gulp-gzip')
     : require("gulp-empty-pipe");
 
-console.log(gzip);
-
 
 // BrowserSync
 function browserSync(done) {
@@ -92,7 +90,6 @@ function inline() {
 };
 
 function fonts() {
-    console.log(gzip);
     return gulp.src('./src/font/*')
         .pipe(gzip())
         .pipe(gulp.dest('./font/'))
