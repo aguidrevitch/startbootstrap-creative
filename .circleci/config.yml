@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Installation of additional packages
           command: |
-            sudo apt-get install python python-pip
+            sudo apt-get install python-pip
             sudo pip install awscli
 
       - run:
