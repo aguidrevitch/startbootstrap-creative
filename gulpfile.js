@@ -12,9 +12,12 @@ const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const inlinesource = require('gulp-inline-source');
-const gzip = process.argv.includes('--prod')
+const gzip = process.args.includes('--prod')
     ? require('gulp-gzip')
     : require("gulp-empty-pipe");
+
+console.log(gzip);
+
 
 // BrowserSync
 function browserSync(done) {
@@ -37,7 +40,7 @@ function browserSyncReload(done) {
 
 // Clean vendor
 function clean() {
-    return del(["./*.html", "./*.html.gz", "./css/*", "./js/*"]);
+    return del(["./*.html", "./*.html.gz", "./css/*", "./js/*", "./font/*"]);
 }
 
 // CSS task
@@ -88,6 +91,14 @@ function inline() {
         .pipe(browsersync.stream());
 };
 
+function fonts() {
+    console.log(gzip);
+    return gulp.src('./src/font/*')
+        .pipe(gzip())
+        .pipe(gulp.dest('./font/'))
+        .pipe(browsersync.stream());
+};
+
 // Watch files
 function watchFiles() {
     gulp.watch(["./src/scss/**/*"], gulp.series(css, inline, browserSyncReload));
@@ -96,7 +107,7 @@ function watchFiles() {
 }
 
 // Define complex tasks
-const build = gulp.series(clean, gulp.parallel(css, js), inline);
+const build = gulp.series(clean, gulp.parallel(css, js, fonts), inline);
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
