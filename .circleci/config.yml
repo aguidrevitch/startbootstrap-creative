@@ -30,4 +30,4 @@ jobs:
       - run:
           name: Deploy project
           command: |
-            aws s3 sync . s3://squeezoid.com --delete --exclude "*" --exclude ".*" --include "*html" --include "font/*" --include "img/*" --include "video/*" --content-encoding gzip --cache-control public,max-age=30672000
+            aws s3 sync . s3://squeezoid.com --delete --exclude "*" --exclude ".*" --include "*html.gz" --include "font/*" --include "img/*" --include "video/*" --content-encoding gzip --cache-control public,max-age=30672000
