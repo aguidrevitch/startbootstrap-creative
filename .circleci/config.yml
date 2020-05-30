@@ -15,8 +15,7 @@ jobs:
       - run:
           name: Installing AWS CLI
           command: |
-            sudo apt-get install python3 python3-pip
-            sudo pip install awscli
+            sudo python3 -m pip install awscli
 
       - run:
           name: Installing Dependencies
