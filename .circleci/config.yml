@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Assembly process
           command: |
-            npm gulp build -- --prod
+            npm run gulp build -- --prod
 
       - run:
           name: Deploy project
