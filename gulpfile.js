@@ -38,7 +38,7 @@ function browserSyncReload(done) {
 
 // Clean vendor
 function clean() {
-    return del(["./*.html", "./*.html.gz", "./css/*", "./js/*", "./font/*"]);
+    return del(["./*.html", "./*.html.gz", "./privacy-policy", "./css", "./js", "./font"]);
 }
 
 // CSS task
