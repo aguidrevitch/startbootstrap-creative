@@ -12,9 +12,6 @@ const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const inlinesource = require('gulp-inline-source');
-const gzip = process.argv.includes('--prod')
-    ? require('gulp-gzip')
-    : require("gulp-empty-pipe");
 
 
 // BrowserSync
@@ -38,7 +35,7 @@ function browserSyncReload(done) {
 
 // Clean vendor
 function clean() {
-    return del(["./*.html", "./*.html.gz", "./privacy-policy", "./css", "./js", "./font"]);
+    return del(["./*.html", "./privacy-policy", "./css", "./js", "./font"]);
 }
 
 // CSS task
@@ -81,14 +78,12 @@ function js() {
 function inline() {
     return gulp.src('./src/html/**/*.html', { base: './src/html/' })
         .pipe(inlinesource({ compress: false }))
-        .pipe(gzip())
         .pipe(gulp.dest('./'))
         .pipe(browsersync.stream());
 };
 
 function fonts() {
     return gulp.src('./src/font/*')
-        .pipe(gzip())
         .pipe(gulp.dest('./font/'))
         .pipe(browsersync.stream());
 };
