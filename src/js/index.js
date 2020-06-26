@@ -86,7 +86,7 @@
     });
 
     form.addEventListener('submit', formSubmit);
-    window.scrollTo(0,1);
+    // window.scrollTo(0,1);
 
     var player = new Plyr('video');
     document.querySelector('.playbutton').addEventListener('click', function () {
