@@ -14,4 +14,4 @@ docker run --rm -it -v "$PWD:/project:delegated" -e "AWS_ACCESS_KEY_ID=" -e "AWS
 
 # Video conversion
 
-ffmpeg -i 16-9\(triniti\).mov -vf scale=960:-1 -vcodec libx264 -pix_fmt yuv420p -profile:v baseline -level 3 out.mov
+ffmpeg -i 9-16\(trinity\).mov -vf scale=-1:960 -vcodec libx264 -pix_fmt yuv420p -profile:v baseline -crf 18 -preset veryslow -level 3 9-16\(trinity\)-lowres.mov
