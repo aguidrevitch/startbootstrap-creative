@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="referrer" content="always">
+        <script>
+            var projecturl = "https://www.kickstarter.com/projects/skisly/squeezoid";
+        </script>
+        <script>
+            function redirect() {
+                window.location.replace(projecturl);
+            };
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                }; if (!f._fbq) f._fbq = n;
+                n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+            }(window, document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '2045428678901817');
+            fbq('track', 'PageView');
+            setTimeout(redirect, 500);
+        </script>
+
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2045428678901817&ev=PageView&noscript=1" />
+            <meta HTTP-EQUIV="REFRESH" content="0; url=https://www.kickstarter.com/projects/skisly/squeezoid?utm_source=nojs&utm_campaign=nojsfx=nojs">
+        </noscript>
+
+    </head>
+
+    <body>
+        <p>Hold Tight - the Squeezoid Kickstarter page is loading...</p>
+        <p>Click <a href="https://www.kickstarter.com/projects/skisly/squeezoid?utm_source=userclick&utm_campaign=userclick&fx=userclick">here</a> if redirect takes too long.</p>
+    </body>
+
+</html>

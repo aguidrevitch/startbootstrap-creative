@@ -30,7 +30,22 @@
         "url": "https://github.com/BlackrockDigital/startbootstrap-creative.git"
     },
     "dependencies": {
-        "plyr": "^3.6.2"
+        "@babel/core": "^7.11.1",
+        "@babel/plugin-proposal-class-properties": "^7.10.4",
+        "@babel/polyfill": "^7.10.4",
+        "@babel/preset-env": "^7.11.0",
+        "babel-preset-stage-3": "^6.24.1",
+        "babelify": "^10.0.0",
+        "browserify": "^16.5.2",
+        "custom-event-polyfill": "^1.0.7",
+        "formdata-polyfill": "^3.0.20",
+        "gulp-sourcemaps": "^2.6.5",
+        "nodelist-foreach-polyfill": "^1.2.0",
+        "plyr": "^3.6.2",
+        "tiny-slider": "^2.9.3",
+        "url-search-params-polyfill": "^8.1.0",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0"
     },
     "devDependencies": {
         "browser-sync": "^2.26.7",
@@ -46,7 +61,5 @@
         "gulp-sass": "^4.1.0",
         "gulp-uglify": "^3.0.2"
     },
-    "browserslist": [
-        "defaults"
-    ]
+    "browserslist": "> 0.25%, not dead"
 }

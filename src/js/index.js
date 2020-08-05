@@ -1,64 +1,24 @@
+const Form = require('./form.js');
+const Plyr = require('plyr');
+
 (function (window, document) {
     'use strict'; // Start of use strict
 
-    var form = document.querySelector('form');
-    var mcMap = {
-        'utm_campaign': 'MMERGE6',
-        'utm_source': 'MMERGE7',
-        'utm_medium': 'MMERGE8',
-        'utm_content': 'MMERGE9',
-    };
-    if (URLSearchParams) {
-
-        (new URLSearchParams(window.location.search)).forEach(function (value, name) {
-            if (mcMap[name]) {
-                var input = document.createElement('input');
-                input.setAttribute('type', 'hidden');
-                input.setAttribute('name', mcMap[name]);
-                input.setAttribute('value', value);
-                form.appendChild(input);                
-            }
-        });
-    }
-  
-    window.subscribed = function (result) {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ 'event': 'formSubmit' });
-        window.dataLayer.push({ 'event': 
-            'success' == (result.result || '') 
-                ? 'formSubmitSuccess' 
-                : 'formSubmitError'
-        });
-        
-        var cta = document.querySelector('#cta');
-        var thankYou = document.querySelector('#thank-you');
-        form.classList.add('fade-out');
+    const form = new Form('form');
+    const hideForm = () => {
+        const cta = document.querySelector('#cta');
+        const thankYou = document.querySelector('#thank-you');
+        form.form().classList.add('fade-out');
         cta.classList.add('fade-out');
         setTimeout(function () {
             cta.style.display = 'none';
             thankYou.style.display = 'block';
             thankYou.classList.add('fade-in');
         }, 500);
-    };
+    }
 
-    var formSubmit = function (e) {
-        e.preventDefault();
-
-        var action = form.getAttribute('action').replace('/post?', '/post-json?');
-        var data = new URLSearchParams();
-        (new FormData(form)).forEach(function (value, field) {
-            data.append(field, value);
-        });
-        data.append('c', 'subscribed');
-
-        var head= document.getElementsByTagName('head')[0];
-        var script= document.createElement('script');
-        script.type= 'text/javascript';
-        script.src= action + '&' + data;
-        head.appendChild(script);
-
-        form.removeEventListener('submit', formSubmit);
-    };
+    window.addEventListener('form:success', hideForm);
+    window.addEventListener('form:error', hideForm);
 
     document.querySelectorAll('[data-start]').forEach(function (el) {
         var start = parseInt(el.dataset.start);
@@ -84,9 +44,6 @@
             }
         }, stop);
     });
-
-    form.addEventListener('submit', formSubmit);
-    // window.scrollTo(0,1);
 
     var player = new Plyr('video');
     document.querySelector('.playbutton').addEventListener('click', function () {
