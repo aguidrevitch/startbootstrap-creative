@@ -25,6 +25,6 @@ jobs:
       - run:
           name: Deploying
           command: |
-            aws s3 sync . s3://squeezoid.com --delete --exclude "*" --exclude ".*" --include "*html" --include "font/*" --include "img/*" --include "video/*" --include "sitemap.xml" --exclude "node_modules/*" --exclude "src/*" --cache-control public,max-age=30672000 --acl public-read
+            aws s3 sync . s3://squeezoid.com --delete --exclude "*" --exclude ".*" --include "*html" --include "css/*" --include "js/*" --include "font/*" --include "img/*" --include "video/*" --include "sitemap.xml" --exclude "node_modules/*" --exclude "src/*" --cache-control public,max-age=30672000 --acl public-read
             aws cloudfront create-invalidation --distribution-id E2ATD99TMDR5V --paths "/*"
   
