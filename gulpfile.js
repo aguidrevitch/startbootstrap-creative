@@ -10,7 +10,6 @@ const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
-const concat = require("gulp-concat");
 const inlinesource = require('gulp-inline-source');
 const browserify = require('browserify');
 const babelify = require('babelify');
