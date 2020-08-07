@@ -160,6 +160,13 @@ var span = document.getElementsByClassName("close-btn")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function () {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        event: 'order',
+        color: document.querySelector("input.selected").id,
+        quantity: document.querySelector("#quantity input").value,
+        price: parseInt(document.getElementById("product-price").innerText.match(/\d+/)[0]),
+    });
     modal.style.display = "block";
 }
 
