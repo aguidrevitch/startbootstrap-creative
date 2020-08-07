@@ -8,7 +8,9 @@ class Form {
 
         (new URLSearchParams(window.location.search)).forEach((value, name) => {
             this.set(name, value);
+            document.cookie = '_url_param_' + name + '=' + value + '; max-age=' + 60*60*24*365;
         });
+
         const callback = "onFormSuccess_" + Form.i++;
 
         window[callback] = function (result) {
@@ -33,8 +35,20 @@ class Form {
         const formSubmit = (e) => {
             e.preventDefault();
 
-            const action = this.form().getAttribute('action').replace('/post?', '/post-json?');
             const data = new URLSearchParams();
+
+            const cookies = document.cookie.split(/; */);
+            for (var j = 0; j < cookies.length; j++) {
+                var pair = cookies[j].split('=');
+                if (pair) {
+                    var matches = pair[0].match(/^_url_param_(.*)/);
+                    if (matches && matches[1]) {
+                        data.append(matches[1], pair[1]);
+                    }
+                }
+            }
+
+            const action = this.form().getAttribute('action').replace('/post?', '/post-json?');
             (new FormData(this.form())).forEach(function (value, field) {
                 data.append(field, value);
             });

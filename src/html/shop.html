@@ -93,16 +93,21 @@
                     <center>
                         <div class="modal-content-window">
                             <span class="close-btn">&times;</span>
-                            <h1>Oops, sorry!</h1>
-                            <h4>Our product is temporarily unavailable for sale</h4>
-                            <p>Leave your email and we will notify you when the product is available</p>
-                            <form action="">
-                                <input type="email" id="email" name="email">
-                                <input type="submit" value="Submit">
-                            </form>
-                        </div>
+                            <div id="message">
+                                <h1>Oops, sorry!</h1>
+                                <h4>Our product is temporarily unavailable for sale</h4>
+                                <p>Leave your email and we will notify you when the product is available</p>
+                                <form id="mailchimp" action="https://squeezoid.us20.list-manage.com/subscribe/post?u=67b15e4e07693f3995da41656&id=9f2290f996" method="post" novalidate="novalidate">
+                                    <input type="email" id="email" name="EMAIL">
+                                    <input type="submit" value="Submit">
+                                </form>
+                            </div>
+                            <div id="thank-you">
+                                <h1>Thank you!</h1>
+                                <h4>We will notify you once the product is available for sale</h4>
+                            </div>
+                        <div>
                     </center>
-
                 </div>
             </div>
         </section>

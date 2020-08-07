@@ -1,8 +1,18 @@
-// const Form = require('./form.js');
+const Form = require('./form.js');
 const { tns } = require('tiny-slider/src/tiny-slider');
 
 let mainSlider,
-    thumsSlider
+    thumsSlider;
+
+const form = new Form('#mailchimp');
+
+const hideForm = () => {
+    document.querySelector('#message').style.display = 'none';
+    document.querySelector('#thank-you').style.display = 'block';
+}
+
+window.addEventListener('form:success', hideForm);
+window.addEventListener('form:error', hideForm);
 
 /* Thumbnails */
 
