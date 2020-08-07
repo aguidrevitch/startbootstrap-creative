@@ -46,7 +46,6 @@ function css() {
     return gulp
         .src([
             "./src/scss/*.scss",
-            "./src/scss/*.sass",
             "!./src/scss/_*.scss"
         ])
         .pipe(plumber())
