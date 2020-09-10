@@ -90,6 +90,7 @@ function buildJs(src, dst, name) {
 }
 gulp.task("js", buildJs('./src/js/index.js', 'app.js'));
 gulp.task("shopjs", buildJs('./src/js/shop.js', 'shop.js'));
+gulp.task("prelaunch", buildJs('./src/js/prelaunch.js', 'prelaunch.js'));
 
 function inline() {
     return gulp.src('./src/html/**/*.html', { base: './src/html/' })
@@ -107,12 +108,12 @@ function fonts() {
 // Watch files
 function watchFiles() {
     gulp.watch(["./src/scss/**/*"], gulp.series(css, inline, browserSyncReload));
-    gulp.watch(["./src/js/**/*"], gulp.series("js", "shopjs", inline, browserSyncReload));
+    gulp.watch(["./src/js/**/*"], gulp.series("js", "shopjs", "prelaunch", inline, browserSyncReload));
     gulp.watch(["./src/html/**/*.html"], gulp.series(inline, browserSyncReload));
 }
 
 // Define complex tasks
-const build = gulp.series(clean, gulp.parallel(css, "js", "shopjs", fonts), inline);
+const build = gulp.series(clean, gulp.parallel(css, "js", "shopjs", "prelaunch", fonts), inline);
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks

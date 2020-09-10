@@ -2,6 +2,12 @@ require('custom-event-polyfill');
 
 class Form {
     #element = null;
+    #map = {
+        'utm_campaign': 'MMERGE6',
+        'utm_source': 'MMERGE7',
+        'utm_medium': 'MMERGE8',
+        'utm_content': 'MMERGE9',
+    }
     static i = 0;
     constructor(selector) {
         this.element = document.querySelector(selector);
@@ -39,9 +45,9 @@ class Form {
 
             const cookies = document.cookie.split(/; */);
             for (var j = 0; j < cookies.length; j++) {
-                var pair = cookies[j].split('=');
+                const pair = cookies[j].split('=');
                 if (pair) {
-                    var matches = pair[0].match(/^_url_param_(.*)/);
+                    const matches = pair[0].match(/^_url_param_(.*)/);
                     if (matches && matches[1]) {
                         data.append(matches[1], pair[1]);
                     }
