@@ -109,7 +109,7 @@ function fonts() {
 function watchFiles() {
     gulp.watch(["./src/scss/**/*"], gulp.series(css, inline, browserSyncReload));
     gulp.watch(["./src/js/**/*"], gulp.series("js", "shopjs", "prelaunch", inline, browserSyncReload));
-    gulp.watch(["./src/html/**/*.html"], gulp.series(browserSyncReload));
+    gulp.watch(["./src/html/**/*.html"], gulp.series(inline, browserSyncReload));
 }
 
 // Define complex tasks

@@ -15,6 +15,23 @@
 
             gtag('config', 'UA-135181936-1');
         </script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '312792556643092');
+fbq('track', 'Lead');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=312792556643092&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
         <link href="../../css/shop.min.css" rel="stylesheet" type='text/css' inline>
     </head>
 
@@ -71,13 +88,14 @@
                     </div>
                     <div class="col-12 col-lg-5" id="product-info">
                         <h1>Squeezoid</h1>
-                        <p id="product-description">Sign Up to be notified when we launch on Kickstarter and get 50% Off Early Bird Discount</p>
+                        <p id="product-description">A quality desktop spinner engineered to skyrocket creativity and dissolve stress. Squeeze, spin and chill anywhere like a pro.</p>
+                        <h5>Sign Up to be notified when we launch on Kickstarter and get 50% Off Early Bird Discount</h5>
                         <form id="mailchimp" action="https://squeezoid.us20.list-manage.com/subscribe/post?u=67b15e4e07693f3995da41656&id=9f2290f996" method="post" novalidate="novalidate">
                             <p>
-                                <input type="email" id="email" placeholder="Email*" name="EMAIL">
+                                <input type="test" id="firstname" placeholder="First Name" name="FNAME">
                             </p>
                             <p>
-                                <input type="test" id="firstname" placeholder="Fist Name" name="FNAME">
+                                <input type="email" id="email" placeholder="Email*" name="EMAIL">
                             </p>
                             <button id="cart">Sign Up</button>
                         </form>
