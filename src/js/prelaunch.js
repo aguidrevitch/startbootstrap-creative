@@ -144,12 +144,3 @@ mainSlider = tns( {
         } )
     }
 } )
-
-// When the user clicks the button, open the modal 
-document.querySelector('#signup').onclick = function () {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        event: 'pre-launch',
-    });
-}
-
