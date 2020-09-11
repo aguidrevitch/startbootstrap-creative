@@ -1,4 +1,5 @@
 const Form = require('./form.js');
+const Plyr = require('plyr');
 const { tns } = require('tiny-slider/src/tiny-slider');
 
 let mainSlider,
@@ -14,6 +15,7 @@ window.addEventListener('form:success', redirect);
 window.addEventListener('form:error', redirect);
 
 /* Thumbnails */
+var player = new Plyr('video');
 
 const thumsSliderOptions = {
     container: '.thumbnails',
@@ -142,5 +144,21 @@ mainSlider = tns( {
                 thumbSlides.find( ( sl, index ) => index === currentIndex ).classList.add( 'selected' )
             }, false )
         } )
+
     }
 } )
+
+function slideChange() {
+    var info = mainSlider.getInfo();
+    var currentItem = info.slideItems[info.index];
+    var prevItem = info.slideItems[info.indexCached];
+    if (currentItem.querySelectorAll('video').length) {
+        player.play();
+    } else if (prevItem.querySelectorAll('video').length) {
+        player.pause();
+    }
+}
+
+mainSlider.events.on('indexChanged', slideChange);
+slideChange();
+

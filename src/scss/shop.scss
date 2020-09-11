@@ -2,6 +2,7 @@
 @import "./bootstrap.min";
 @import "./animations.scss";
 @import "./social.scss";
+@import "plyr/dist/plyr";
 @import "./node_modules/tiny-slider/src/tiny-slider.scss";
 
 @font-face {
@@ -201,6 +202,12 @@ body {
     height: 345px;
 }
 
+// .slider-image {
+//     .plyr__controls, button.plyr__control {
+//         display: none;
+//     }
+// }
+
 .thumbnail-image {
     cursor: pointer;
     width: 110px;
@@ -241,10 +248,11 @@ body {
         padding-left: 40px;
     }
 }
+
 #mailchimp {
 
     input {
-        min-width: 200px;
+        min-width: 250px;
     }
 }
 

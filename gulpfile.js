@@ -22,7 +22,6 @@ function browserSync(done) {
     browsersync.init({
         server: {
             baseDir: "./",
-            reloadDebounce: 500
         },
         port: 3000,
         open: false
@@ -58,8 +57,7 @@ function css() {
             suffix: ".min"
         }))
         .pipe(cleanCSS())
-        .pipe(gulp.dest("./css"))
-        .pipe(browsersync.stream());
+        .pipe(gulp.dest("./css"));
 }
 
 // JS task
@@ -83,8 +81,7 @@ function buildJs(src, dst, name) {
                 suffix: '.min'
             }))
             .pipe(sourcemaps.write('./'))
-            .pipe(gulp.dest('./js/'))
-            .pipe(browsersync.stream());
+            .pipe(gulp.dest('./js/'));
 
     }
 }
@@ -95,14 +92,12 @@ gulp.task("prelaunch", buildJs('./src/js/prelaunch.js', 'prelaunch.js'));
 function inline() {
     return gulp.src('./src/html/**/*.html', { base: './src/html/' })
         .pipe(inlinesource({ compress: false }))
-        .pipe(gulp.dest('./'))
-        .pipe(browsersync.stream());
+        .pipe(gulp.dest('./'));
 };
 
 function fonts() {
     return gulp.src('./src/font/*')
-        .pipe(gulp.dest('./font/'))
-        .pipe(browsersync.stream());
+        .pipe(gulp.dest('./font/'));
 };
 
 // Watch files
