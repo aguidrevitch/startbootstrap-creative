@@ -155,7 +155,7 @@ function slideChange() {
     if (currentItem.querySelectorAll('video').length) {
         player.play();
     } else if (prevItem.querySelectorAll('video').length) {
-        player.pause();
+        player.stop();
     }
 }
 
